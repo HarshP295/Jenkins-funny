@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 html,
@@ -13,7 +14,7 @@ body {
 }
 
 p {
-    margin: .5em 0 .5em 0;
+    margin: .5em 0;
 }
 
 header {
@@ -24,23 +25,33 @@ header {
     width: 100%;
     background-color: #a493c0;
     padding: 10px;
+    z-index: 1000;
+    text-align: center; /* Center-align text inside header */
 }
 
-nav a:visited,
-nav a:link {
+nav {
+    display: inline-block;
+}
+
+nav ul {
+    display: inline-flex; /* Use inline-flex to center the list items horizontally */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
-nav>ul {
-    display: inline;
-    padding: 0;
-}
-
-nav>ul>li {
-    display: inline-block;
-    list-style: none;
-    margin: 0 5px 0 5px;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 main {
@@ -53,19 +64,74 @@ main {
 
 footer {
     padding: 15px;
-}
-
-aside,
-article {
-    padding: 2em;
+    background-color: #a493c0;
+    color: #fff;
+    text-align: center;
 }
 
 aside {
+    position: fixed;
+    bottom: 10px; /* Position it 10px from the bottom */
+    left: 10px; /* Position it 10px from the left */
     text-align: center;
+    padding: 1em; /* Adjust padding as needed */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+aside img {
+    max-width: 100px; /* Reduce the maximum width of the logo */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the logo horizontally within the aside */
 }
 
 article {
     width: 75%;
+    margin: 0 auto; /* Center the article */
+}
+
+.banner {
+    width: 450px; /* Set a smaller width */
+    height: 310px; /* Set the height equal to width */
+    border-radius: 40%; /* Make the image round */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto; /* Center the banner image */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center; /* Center-align the heading */
+}
+
+.sub-title {
+    background-color: transparent; /* Remove the white background */
+    font-size: 1.2em;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center; /* Center-align the subtitle text */
+}
+
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
 }
 
 .columns {
@@ -83,7 +149,6 @@ article {
         display: flex;
     }
 }
-
 
 /* Pies */
 
